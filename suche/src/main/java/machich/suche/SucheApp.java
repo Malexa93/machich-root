@@ -1,13 +1,13 @@
-package de.whz.machich;
+package machich.suche;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+
 @SpringBootApplication
-public class MachichRootApplication {
-
+public class SucheApp 
+{
 	public static void main(String[] args) {
-		SpringApplication.run(MachichRootApplication.class, args);
+		SpringApplication.run(SucheApp.class, args);
 	}
-
 }

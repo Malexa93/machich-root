@@ -1,6 +1,7 @@
 package machich.suche.domain;
 
 import java.util.Date;
+import java.util.UUID;
 
 import javax.persistence.Embeddable;
 
@@ -15,8 +16,11 @@ public class Gesuch {
 	private String ortsname;
 	private Date datum;
 	private String dienstleistung;
+	private UUID id;
 	
-	public Gesuch () {}
+	public Gesuch () {
+		id = UUID.randomUUID();
+	}
 	
 	@Override
 	public String toString() {
@@ -50,6 +54,16 @@ public class Gesuch {
 	public void setDienstleistung(String dienstleistung) {
 		this.dienstleistung = dienstleistung;
 	}
+
+	public UUID getId() {
+		return id;
+	}
+
+	public void setId(UUID id) {
+		this.id = id;
+	}
+	
+	
 	
 	
 	
