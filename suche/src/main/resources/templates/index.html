@@ -1,0 +1,98 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <title>MachIch</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>      
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.1/js/tempusdominus-bootstrap-4.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.1/css/tempusdominus-bootstrap-4.min.css" />
+            <style>
+            .firma-ara{
+    padding-bottom: 100px;
+    padding-top: 100px;
+}
+.bg{
+background: #00b09b;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #96c93d, #00b09b);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #96c93d, #00b09b); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+
+
+  
+<section class="search-banner text-white py-3 bg" id="search-banner">
+<form action="#" th:object="${gesuch}" method="POST">
+    <div class="container py-5 my-5">
+        <div class="row text-center pb-4">
+            <div class="col-md-12">
+                <h2>Suchen & Finden</h2>
+            </div>
+        </div>
+
+                            <div class="form-row">
+                                <div class="form-group col-md-4">
+                                <label for="was">Was?</label>
+                         
+                               <input id="was" type="text" class="form-control" th:field="*{dienstleistung}">
+                         
+                           </div>
+                            <div class="form-group col-md-4">
+						      <label for="inputZip">Wo?</label>
+						      <input type="text" class="form-control" id="inputZip" th:field="*{ortsname}">
+						    </div>
+                         <div class="form-group col-md-2">
+						      <label for="inputState">Umkreis</label>
+						      <select id="inputState" class="form-control">
+						        <option selected>+ 5km</option>
+						        <option>+ 10km</option>
+						      </select>
+						    </div>
+						   
+                            </div>
+                  
+
+                   <div class="form-row">
+  						<div class="form-group col-md-6">
+                                <label for="wann">Wann?</label>
+                       <div class="input-group date" id="datetimepicker1" data-target-input="nearest">
+                    <input type="text" class="form-control datetimepicker-input" data-target="#datetimepicker1" th:field="*{datum}"/>
+                    <div class="input-group-append" data-target="#datetimepicker1" data-toggle="datetimepicker">
+                        <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                    </div>
+                </div>
+                         <button  type="submit" class="btn btn-warning  pl-5 pr-5">Suchen</button>
+                           </div>
+           
+                     </div>
+               
+  </div>
+      
+  
+
+    </form>
+</section>
+
+<script type="text/javascript">
+            $(function () {
+                $('#datetimepicker1').datetimepicker();
+            });
+ </script>
+</body>
+
+</html>
