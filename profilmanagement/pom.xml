@@ -7,12 +7,10 @@
     <artifactId>machich-root</artifactId>
     <version>0.0.1-SNAPSHOT</version>
   </parent>
-  
   <groupId>de.whz</groupId>
-  <artifactId>matching</artifactId>
+  <artifactId>profilmanagement</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-  <name>matching</name>
-   <packaging>jar</packaging>
+  <name>profilmanagement</name>
   <url>http://maven.apache.org</url>
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -29,13 +27,4 @@
         <artifactId>h2</artifactId>
     </dependency>
   </dependencies>
-    	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-			</plugin>
-		
-		</plugins>
-	</build>
 </project>

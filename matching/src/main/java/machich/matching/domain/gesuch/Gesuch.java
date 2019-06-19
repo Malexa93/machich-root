@@ -20,7 +20,7 @@ import machich.matching.events.PreisvorschlagAngenommen;
 import machich.matching.events.TerminAbgelehnt;
 import machich.matching.events.TerminAngenommen;
 
-@Entity
+
 public class Gesuch extends AbstractAggregateRoot{
 
 	private Id id;

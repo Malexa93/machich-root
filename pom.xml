@@ -59,5 +59,6 @@
 <modules>
 <module>matching</module>
     <module>suche</module>
+    <module>profilmanagement</module>
   </modules>
 </project>

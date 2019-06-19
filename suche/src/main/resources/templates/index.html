@@ -61,6 +61,7 @@ background: linear-gradient(to right, #96c93d, #00b09b); /* W3C, IE 10+/ Edge, F
 						      <select id="inputState" class="form-control">
 						        <option selected>+ 5km</option>
 						        <option>+ 10km</option>
+						        <option>+20km</option>
 						      </select>
 						    </div>
 						   
@@ -90,7 +91,10 @@ background: linear-gradient(to right, #96c93d, #00b09b); /* W3C, IE 10+/ Edge, F
 
 <script type="text/javascript">
             $(function () {
-                $('#datetimepicker1').datetimepicker();
+            	$.fn.datepicker.defaults.language = 'de'
+                $('#datetimepicker1').datetimepicker()({
+                	format: 'DD-MM-YYYY HH:mm'
+                });
             });
  </script>
 </body>
