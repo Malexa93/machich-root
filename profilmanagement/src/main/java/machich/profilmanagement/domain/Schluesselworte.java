@@ -1,4 +1,4 @@
-package machich.matching.domain;
+package machich.profilmanagement.domain;
 
 import java.util.Arrays;
 import java.util.Collections;

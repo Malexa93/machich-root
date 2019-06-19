@@ -5,29 +5,50 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
-    <title>Big Loan Pugs</title>
+    <title>Ergebnisse Ihrer Suche</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
-          integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous"/>
 
-    <!-- Optional theme -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css"
-          integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous"/>
 
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
-            integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
-            crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta.2/css/bootstrap.css"/>
+
+            <style type="text/css">
+            .card-horizontal {
+    display: flex;
+    flex: 1 1 auto;
+}
+            </style>
 </head>
 <body>
 
 <div class="container">
 
     <form action="#" method="POST">
-        <h2>Get your big fat pug loan here</h2>
-        <button type="submit" class="btn btn-primary btn-lg">Auswählen</button>
+    <button type="submit" class="btn btn-primary btn-lg">Auswählen</button>
     </form>
+    <h2>Deine Anfrage hat folgende Ergebnisse geliefert: </h2>
+    <tr th:each="macher: ${macherListe}">
+    <div class="container-fluid">
+    <div class="row">
+        <div class="col-12 mt-3">
+            <div class="card">
+                <div class="card-horizontal">
+                    <div class="img-square-wrapper">
+                        <img style="max-height: 150px;max-width: 150px;" class="img-fluid" src="/default-avatar.jpg" alt="Card image cap">
+                    </div>
+                    <div class="card-body">
+                        <h4 class="card-title" th:text="${macher.zeigeId()}"></h4>
+                        <p class="card-text" th:text="${macher.zeigeName()}"></p>
+                      <!-- <a class="btn" href="@{/matching/{matchnummer}(matchnummer=match.id})}">Anfrage stellen</a>  --> 
+                    </div>
+                </div>
+      
+            </div>
+        </div>
+    </div>
+</div>
+</tr>
+
+	
 
 </div>
 

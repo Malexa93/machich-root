@@ -7,8 +7,7 @@ import java.util.UUID;
 import lombok.Getter;
 import lombok.Setter;
 
-@Getter
-@Setter
+
 public class SucheGestartet implements Serializable{
 	
 	private UUID id;
@@ -26,6 +25,22 @@ public class SucheGestartet implements Serializable{
 	}
 
 
+
+	public UUID getId() {
+		return id;
+	}
+
+	public void setId(UUID id) {
+		this.id = id;
+	}
+
+	public Date getErstellungsdatum() {
+		return erstellungsdatum;
+	}
+
+	public void setErstellungsdatum(Date erstellungsdatum) {
+		this.erstellungsdatum = erstellungsdatum;
+	}
 
 	@Override
 	public String toString() {

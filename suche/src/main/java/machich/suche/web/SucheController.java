@@ -14,6 +14,7 @@ import org.springframework.web.servlet.view.RedirectView;
 
 import machich.suche.domain.Gesuch;
 import machich.suche.events.SucheGestartet;
+import machich.suche.repository.GesuchRepository;
 
 @Controller
 public class SucheController {
@@ -21,6 +22,12 @@ public class SucheController {
 	
 	@Value("${zeigeMacherURL}")
 	private String zeigeMacherURL;
+	
+	private GesuchRepository gesuchRepo;
+	
+	public SucheController(GesuchRepository gesuchRepository) {
+		this.gesuchRepo = gesuchRepository;
+	}
 	
 	
 	@GetMapping("/")
@@ -34,8 +41,11 @@ public class SucheController {
 		Date startZeit = new Date();
 		SucheGestartet sucheGestartetEvent = new SucheGestartet(startZeit);
 		gesuch.setDatum(startZeit);
+		gesuch.setGesuchsNummer(sucheGestartetEvent.getId().toString());
+		gesuchRepo.save(gesuch);
 		LOGGER.info("Sent " + gesuch.toString());
 		LOGGER.info("Sent " + sucheGestartetEvent.toString());
+		
 		
 		return new RedirectView(zeigeMacherURL + gesuch.getId());
 	}

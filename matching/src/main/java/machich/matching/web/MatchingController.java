@@ -11,31 +11,45 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.view.RedirectView;
 
+import machich.matching.repository.MacherRepository;
 
 @Controller
 @RequestMapping(path = "matching")
 public class MatchingController {
-	
-	
+
+	private final static Logger LOGGER = LoggerFactory.getLogger(MatchingController.class);
+	private MacherRepository macherRepo;
+
 	@Value("${zeigeLoginURL}")
 	private String zeigeLoginURL;
-	
-	private final static Logger LOGGER = LoggerFactory.getLogger(MatchingController.class);
-	
+
+
+
+	public MatchingController(MacherRepository mR) {
+		this.macherRepo = mR;
+
+	}
+
 	@GetMapping("/{gesuchnummer}")
 	public String index(Model model, @PathVariable String gesuchnummer) {
 		LOGGER.info("Matching-Applikation: " + gesuchnummer);
+		model.addAttribute("macherListe", macherRepo.findAll());
 		return "zeigeMatches";
 	}
-	
+
 	@PostMapping("/{gesuchnummer}")
-	public RedirectView zeigeLogin(){
+	public RedirectView zeigeLogin() {
 		return new RedirectView(zeigeLoginURL);
 	}
-	{
-		
+
+	@GetMapping("/{matchingnummer}")
+	public String zeigeMatchDetails(Model model, @PathVariable String matchnummer) {
+		return "";
+
 	}
 
+	{
 
+	}
 
 }

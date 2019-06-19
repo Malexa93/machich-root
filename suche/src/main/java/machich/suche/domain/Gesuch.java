@@ -4,32 +4,43 @@ import java.util.Date;
 import java.util.UUID;
 
 import javax.persistence.Embeddable;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 
 import lombok.AllArgsConstructor;
 
 
 @Embeddable
 
-@AllArgsConstructor
+@Entity
 public class Gesuch {
 	
+	@Id
+	@GeneratedValue
+	private Long id;
 	private String ortsname;
 	private Date datum;
 	private String dienstleistung;
-	private UUID id;
+	private String gesuchsnummer;
 	
 	public Gesuch () {
-		id = UUID.randomUUID();
+		//id = UUID.randomUUID();
 	}
 	
-	@Override
-	public String toString() {
-		return "Gesuch{" +
-				"ortsname=" + ortsname +
-				", datum=" + datum +
-				", dienstleistung='" + dienstleistung + '\'' +
-				'}';
+
+
+	public String getGesuchsNummer() {
+		return gesuchsnummer;
 	}
+
+
+
+	public void setGesuchsNummer(String gesuchsNummer) {
+		this.gesuchsnummer = gesuchsNummer;
+	}
+
+
 
 	public String getOrtsname() {
 		return ortsname;
@@ -55,13 +66,19 @@ public class Gesuch {
 		this.dienstleistung = dienstleistung;
 	}
 
-	public UUID getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(UUID id) {
-		this.id = id;
+	@Override
+	public String toString() {
+		return "Gesuch{" +
+				"ortsname=" + ortsname +
+				", datum=" + datum +
+				", dienstleistung='" + dienstleistung + '\'' +
+				'}';
 	}
+
 	
 	
 	
