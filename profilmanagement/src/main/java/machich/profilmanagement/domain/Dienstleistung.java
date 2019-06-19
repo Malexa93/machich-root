@@ -22,7 +22,7 @@ public class Dienstleistung {
 	@ManyToOne()
 	private Macher macher;
 	
-	private Kategorie kategorie;
+	//private Kategorie kategorie;
 	
 	public Dienstleistung() {
 		
@@ -63,16 +63,16 @@ public class Dienstleistung {
 	}
 
 
-
-	public Kategorie getKategorie() {
-		return kategorie;
-	}
-
-
-
-	public void setKategorie(Kategorie kategorie) {
-		this.kategorie = kategorie;
-	}
+//
+//	public Kategorie getKategorie() {
+//		return kategorie;
+//	}
+//
+//
+//
+//	public void setKategorie(Kategorie kategorie) {
+//		this.kategorie = kategorie;
+//	}
 	
 	
 

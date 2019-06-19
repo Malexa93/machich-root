@@ -47,6 +47,12 @@ public class MatchingController {
 		return "";
 
 	}
+	
+	@GetMapping("/{kundennummer}")
+	public String zeigeMatch(Model model, @PathVariable String matchnummer) {
+		return "";
+
+	}
 
 	{
 

@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 import machich.profilmanagement.domain.Dienstleistung;
 import machich.profilmanagement.domain.Kategorie;
 import machich.profilmanagement.domain.Macher;
-import machich.profilmanagement.repository.KategorieRepository;
+
 import machich.profilmanagement.repository.MacherRepository;
 
 
@@ -18,11 +18,13 @@ import machich.profilmanagement.repository.MacherRepository;
 @Component
 public class DbInitializer implements CommandLineRunner {
     private MacherRepository macherRepo;
-    private KategorieRepository kategorieRepo;
+    //private KategorieRepository kategorieRepo;
     
-    public DbInitializer(MacherRepository macherRepo, KategorieRepository kategorieRepository){
+    public DbInitializer(MacherRepository macherRepo)
+    		//, KategorieRepository kategorieRepository)
+    		{
         this.macherRepo = macherRepo;
-        this.kategorieRepo = kategorieRepository;
+        //this.kategorieRepo = kategorieRepository;
     }
     
     

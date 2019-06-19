@@ -15,7 +15,11 @@ public class Kunde {
 	@GeneratedValue
 	private Long id;
 	
-	private String name;
+	private String nachname;
+	private String vorname;
+	private String email;
+	private String telefonnummer;
+	
 	private Date mitgliedSeit;
 	
 	@Temporal(TemporalType.TIMESTAMP)
@@ -30,17 +34,52 @@ public class Kunde {
 		return id;
 	}
 
-	public String zeigeName() {
-		return name;
+
+
+	public String getNachname() {
+		return nachname;
 	}
 
-	public void nameAendernZu(String name) {
-		this.name = name;
+
+	public void setNachname(String nachname) {
+		this.nachname = nachname;
 	}
+
+
+	public String getVorname() {
+		return vorname;
+	}
+
+
+	public void setVorname(String vorname) {
+		this.vorname = vorname;
+	}
+
 
 	public Date istMitgliedSeit() {
 		return mitgliedSeit;
 	}
 
+
+	public String getEmail() {
+		return email;
+	}
+
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+
+	public String getTelefonnummer() {
+		return telefonnummer;
+	}
+
+
+	public void setTelefonnummer(String telefonnummer) {
+		this.telefonnummer = telefonnummer;
+	}
+
+	
 
 }
